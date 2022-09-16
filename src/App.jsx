@@ -1,12 +1,28 @@
 import './App.css';
-import Main from './Components/Main';
-import Nav from './Components/Nav';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
+  const [labas, setLabas] = useState('');
+
+  useEffect(()=>{
+    axios.get('http://psi.back/second')
+    .then(res => {
+      setLabas(res.data.message);
+    })
+  }, []);
+  
   return (
     <div className="App">
-      <Nav />
+      
+        <Nav />
       <Main />
+        <p>
+          {labas}
+        </p>
+      
+      
+
     </div>
   );
 }
