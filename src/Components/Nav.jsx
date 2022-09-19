@@ -1,8 +1,17 @@
+import { Link, NavLink } from 'react-router-dom';
+
 function Nav() {
   return (
     <header className="nav">
-      <img src={require('../img/PSI_Logo.png')} className="logo" alt="logo" />
       <ul className='nav-links'>
+        <img src={require('../img/PSI_Logo.png')} className="logo" alt="logo" />
+        <NavLink
+          to='/'
+          className='none'
+          style={({ isActive }) => (isActive ? { color: '#ff6e6e' } : null)}
+        >
+          <li>home</li>
+        </NavLink>
         <li>auction</li>
         <li>shop</li>
         <li>ads/advertisings</li>
@@ -10,9 +19,14 @@ function Nav() {
         <li>jobs</li>
         <li className='dropdown'>account
           <div className='dropdown-content'>
-            <p>sign up</p>
-            <p>login</p>
-            <p>log out</p>
+            <ul className='nav-links'>
+              <li>sign up</li>
+              <li>login</li>
+              <Link
+                to='/logout' className='none'>
+                <li>Logout</li>
+              </Link>
+            </ul>
           </div>
         </li>
         <li>en</li>

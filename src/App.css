@@ -29,7 +29,7 @@ body {
   padding: 0 10px;
 }
 .nav-links {
-  width: 80%;
+  width: 100%;
   display: flex;
   font-family: monospace;
   flex-wrap: wrap;
@@ -40,12 +40,17 @@ body {
   font-weight: bold;
   font-family: cursive;
   font-variant: small-caps;
+  padding: 0 4%;
 }
 .nav-links li {
   display: flex;
   align-items: center;
   height: 60px;
   padding: 0 10px;
+}
+.none {
+  text-decoration: none;
+  justify-self: center;
 }
 .nav-links li:hover {
   cursor: pointer;
@@ -71,13 +76,15 @@ body {
   padding: 0;
   z-index: 1;
 }
-.dropdown-content p {
-  color: black;
+.dropdown-content li {
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
+  display: flex;
   text-align: left;
   color: #aaa;
+}
+.dropdown-content li:last-of-type {
+  margin-left: 0;
 }
 .dropdown-content p:hover {
   cursor: pointer;

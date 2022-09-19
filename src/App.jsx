@@ -1,32 +1,37 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Nav from './Components/Nav';
-import Main from './Components/Main';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Front from './Front';
 
 function App() {
-  const [labas, setLabas] = useState('');
-
-  useEffect(() => {
-    axios.get('http://psi.back/second')
-      .then(res => {
-        setLabas(res.data.message);
-      })
-  }, []);
-
   return (
-    <div className="App">
-
-      <Nav />
-      <Main />
-      <p>
-        {labas}
-      </p>
-
-
-
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/register'
+        // element={<RegPage show='register' />}
+        />
+        <Route path='/login'
+        // element={<LoginPage />} 
+        />
+        <Route path='/logout'
+        //element={<LogoutPage />} 
+        />
+        <Route
+          path='/'
+          element={
+            <Front show='welcome' />
+          }
+        />
+        <Route
+          path='/admin'
+        // element={
+        //   <RequireAuth role='admin'>
+        //     <Back show='admin' />
+        //   </RequireAuth>
+        // }
+        />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
