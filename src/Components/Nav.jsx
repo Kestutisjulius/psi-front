@@ -18,20 +18,20 @@ function Nav() {
         <li>snake</li>
         <li>jobs</li>
         <li className='dropdown'>account
-          <div className='dropdown-content'>
-            <ul className='nav-links'>
+          <ul className='dropdown-content'>
+            <NavLink to='/register' className='none' style={({ isActive }) => (isActive ? { color: '#ff6e6e' } : null)} >
               <li>sign up</li>
-              <li>login</li>
-              <Link
-                to='/logout' className='none'>
-                <li>Logout</li>
-              </Link>
-            </ul>
-          </div>
+            </NavLink>
+            <li>login</li>
+            <Link
+              to='/logout' className='none'>
+              <li>Logout</li>
+            </Link>
+          </ul>
         </li>
         <li>en</li>
       </ul>
-    </header>
+    </header >
   )
 }
 

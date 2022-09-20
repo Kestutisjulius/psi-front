@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from './Components/Nav';
 import Main from './Components/Main';
+import RegPage from './Components/RegPage';
 
 function Front({ show }) {
   const [labas, setLabas] = useState('');
@@ -23,7 +24,8 @@ function Front({ show }) {
             {labas}
           </p>
         </>
-      ) : null
+      ) : show === 'register' ?
+        <RegPage /> : null
       }
     </div>
   )
